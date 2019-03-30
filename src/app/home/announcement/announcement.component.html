@@ -1,15 +1,28 @@
 <div class="container">
   <div class="card mb-3">
     <div class="card-header">
-      <div class="row"></div>
-      New Announcement
+      <div class="row justify-content-between align-content-center">
+        <div class="col-auto">
+          New Announcement
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary btn-sm" (click)="onAdd()">+ New</button>
+        </div>
+      </div>
     </div>
     <div class="card-body">
+      <h6 class="card-title">Announcement</h6>
       <form>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1" style="font-size: 1.2em;">Announcement:-</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
+          <ng-container *ngFor="let c of this.count">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <hr>
+          </ng-container>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-auto">
+            <button class="btn btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
